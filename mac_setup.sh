@@ -1,9 +1,5 @@
 #!/bin/sh
 
-#
-# Global
-#
-
 # 起動音を鳴らさない
 sudo nvram SystemAudioVolume=%00
 
@@ -55,17 +51,8 @@ defaults write com.apple.dock autohide -bool false
 # 設定反映
 killall Dock
 
-#
-# Dashboard
-#
-
 # Dashboardを無効にする
 defaults write com.apple.dashboard mcx-disabled -bool true
-
-
-#
-# Finder
-#
 
 # デフォルトはリストビュー表示
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
@@ -94,28 +81,14 @@ chflags nohidden ~/Library
 # Finder再起動して設定を反映
 killall Finder
 
-
-#
-# System
-#
-
 # ネットワークフォルダに.DS_Storeを作らない
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-
-#
-# Trackpad
-#
 
 # タップでクリック
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
 # スクロール方向をナチュラルに
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
-
-#
-# Screen Capture
-#
 
 # キャプチャの保存場所を変更
 defaults write com.apple.screencapture location ~/Downloads
@@ -129,23 +102,11 @@ defaults write com.apple.screencapture disable-shadow -boolean true
 # 設定を反映
 killall SystemUIServer
 
-
-#
-# Preview
-#
-
 # 起動時に前回開いたウィンドウを開かない
 defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -bool false
 
-
-#
-# QuickTime
-#
-
 # 起動時に前回開いたファイルを開かない
 defaults write com.apple.QuickTimePlayerX NSQuitAlwaysKeepsWindows -bool false
-
-# エディター
 
 ## 自動で頭文字を大文字にしない
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool "false"
