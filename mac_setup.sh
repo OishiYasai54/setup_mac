@@ -1,3 +1,4 @@
+
 #!/bin/sh
 
 # 起動音を鳴らさない
@@ -16,10 +17,10 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 3
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # 保存ダイアログを詳細設定で表示
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -boolean true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 # 印刷ダイアログを詳細設定で表示 (10.6 and before, Key name is PMPrintingExpandedStateForPrint)
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -boolean true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # ファイルの保存場所のデフォルトをiCloud以外にする
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -37,7 +38,7 @@ defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)
 defaults write com.apple.dock tilesize -int 32
 
 # 拡大を有効にする
-defaults write com.apple.dock magnification -bool false
+defaults write com.apple.dock magnification -bool true
 
 # 拡大時のサイズ (一般的な最大: 128)
 defaults write com.apple.dock largesize -int 128
@@ -58,7 +59,7 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
 # デスクトップ上にアイコンを表示しない
-defaults write com.apple.finder CreateDesktop -boolean false
+defaults write com.apple.finder CreateDesktop -bool false
 
 # タイトルバーにフルパスを表示
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -73,7 +74,7 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder QLHidePanelOnDeactivate -bool true
 
 # Quick Look上でテキストの選択を可能に
-defaults write com.apple.finder QLEnableTextSelection -bool true
+defaults write com.apple.finder EnableTextSelection -bool true
 
 # 「ライブラリ」を常に表示
 chflags nohidden ~/Library
@@ -97,7 +98,7 @@ defaults write com.apple.screencapture location ~/Downloads
 defaults write com.apple.screencapture name "SS_"
 
 # キャプチャに影を付けない
-defaults write com.apple.screencapture disable-shadow -boolean true
+defaults write com.apple.screencapture disable-shadow -bool true
 
 # 設定を反映
 killall SystemUIServer
@@ -113,4 +114,3 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool "false"
 
 ## スペルの訂正を無効にする
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool "false"
-
